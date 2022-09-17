@@ -4,10 +4,14 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   html{
-    font-family:Verdana;
+    font-family: CircularStd,Helvetica,Arial,Segoe UI,Roboto,sans-serif;
     background-color: #f4f8fc;
     margin: 0 auto;
     padding: 0;
+  }
+
+  body {
+    margin: 0;
   }
 `;
 

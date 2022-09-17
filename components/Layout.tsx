@@ -14,15 +14,16 @@ const Layout = ({ children, title = "" }: Props) => (
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="stylesheet" href="cesium/Widgets/widgets.css" />
     </Head>
     <ContentWrapper>
       <header>
-        <nav>
+        <Nav>
           <Link href="/">
             <a>Home</a>
           </Link>
-          | <a href="/api/positions">API</a>
-        </nav>
+          <a href="/api/positions">API</a>
+        </Nav>
       </header>
       {children}
     </ContentWrapper>
@@ -30,11 +31,24 @@ const Layout = ({ children, title = "" }: Props) => (
 );
 
 const ContentWrapper = styled.div`
-  background-color: #ffffff;
   display: flex;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
   max-width: 992px;
   padding: 1rem;
   margin: 0 auto;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  gap: 0.5rem;
+
+  > a {
+    color: #6f7589;
+    text-decoration: none;
+  }
 `;
 
 export default Layout;
